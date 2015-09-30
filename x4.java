@@ -16,7 +16,9 @@ void draw(){
   background(backR,backG,backB);
   
   rect(buttonX,buttonY,buttonW,buttonH);
-  
+  fill(0);
+  text("Click Me!",buttonX-30, buttonY);
+  fill(255);
 }
 
 void mousePressed(){
