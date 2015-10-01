@@ -13,6 +13,7 @@ float backB = 100;
 float buttonDX = 0;
 float buttonDY = 0;
 int score = 0;
+int finalScore = 0;
 float time = 30;
 
 void draw(){
@@ -38,7 +39,9 @@ void draw(){
   fill(backR+122,backG+122,backB+122);
   text(score,width/2,100);
   fill(255);
-  time -= 1/frameRate;
+  if(time >= 0){
+    time -= 1/frameRate;
+  }
   text(time,width/4,100);
   textSize(14);
 }
@@ -58,7 +61,8 @@ void mousePressed(){
     buttonDY = random(-20,20);
     if(time > 0){
        score += 1;
-    }
+       finalScore += 1;
+    }   
   } 
 }
   
