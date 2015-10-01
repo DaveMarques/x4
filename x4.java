@@ -61,8 +61,8 @@ void mousePressed(){
     backR = random(0,255);
     backG = random(0,255);
     backB = random(0,255);
-    buttonDX = random(-20,20);
-    buttonDY = random(-20,20);
+    buttonDX = random(-10,10);
+    buttonDY = random(-10,10);
     if(time > 0){
        score += 1;
     }   
