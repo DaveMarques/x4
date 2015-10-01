@@ -37,8 +37,10 @@ void draw(){
   textSize(60);
   fill(backR+122,backG+122,backB+122);
   text(score,width/2,100);
-  textSize(10);
   fill(255);
+  time -= 1/frameRate;
+  text(time,width/4,100);
+  textSize(14);
 }
 
 void mousePressed(){
@@ -54,8 +56,9 @@ void mousePressed(){
     backB = random(0,255);
     buttonDX = random(-20,20);
     buttonDY = random(-20,20);
-    score += 1;
-  }
-  
+    if(time > 0){
+       score += 1;
+    }
+  } 
 }
   
