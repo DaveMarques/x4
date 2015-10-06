@@ -3,22 +3,19 @@ void setup(){
   rectMode(CENTER);
 }
 
-float buttonX = 500;
-float buttonY = 400;
-float buttonW = 100;
-float buttonH = 100;
-float backR = 100;
-float backG = 100;
-float backB = 100;
+float buttonX  = 500;
+float buttonY  = 400;
+float buttonW  = 100;
+float buttonH  = 100;
+float backR    = 100;
+float backG    = 100;
+float backB    = 100;
 float buttonDX = 0;
 float buttonDY = 0;
-int score = 0;
-float time = 20;
+int   score    = 0;
+float time     = 20;
 
 void draw(){
-  
-  buttonX += buttonDX;
-  buttonY += buttonDY;
   
   if(buttonX > width - buttonW/2 || buttonX < buttonW/2){
     buttonDX *= -1;//random(-(1/2),-2);
@@ -38,12 +35,16 @@ void draw(){
   fill(backR+122,backG+122,backB+122);
   text(score,width/2,100);
   fill(255);
-  if(time > 0){
+  if(time > 0 && score > 0){
     time -= 1/frameRate;
-  } else {
+    buttonX += buttonDX;
+    buttonY += buttonDY;
+  } 
+  if(time < 0) {
     textSize(100);
     text(score,width/2,height/2);
     text("Final Score:",width/4,height/2-100);
+    
   }
   textSize(50);
   text(time,width/8,100);
